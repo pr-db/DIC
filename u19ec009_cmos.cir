@@ -1,0 +1,25 @@
+*CMOS inverter 
+
+.model myPMOS PMOS(Vt0 = -1 kp = 20u)
+.model myNMOS NMOS(Vt0 = 0.8 kp = 50u)
+
+M1 out1 in 1 1 myPMOS l=1u w=1.51u
+M2 out1 in 0 0 myNMOS l=1u w=1u
+Vdd1 1 0 5v 
+
+M3 out2 in 2 2 myPMOS l=1u w=1.51u
+M4 out2 in 0 0 myNMOS l=1u w=1u
+Vdd2 2 0 4v 
+
+M5 out3 in 3 3 myPMOS l=1u w=1.51u
+M6 out3 in 0 0 myNMOS l=1u w=1u
+Vdd3 3 0 3.3v 
+
+Vin in 0 5v
+.dc Vin 0 5v 0.05 
+
+.control
+run
+plot v(out1) v(out2) v(out3) v(in)
+.endc
+.end
