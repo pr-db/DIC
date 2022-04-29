@@ -1,0 +1,17 @@
+*NMOS inverter
+
+.model mymos NMOS(Vto = 0.8 Kp = 40u)
+
+Vdd 1 0 5
+Rl 1 out 200k
+Vin in 0 5
+M1 out in 0 0 mymos
+
+.dc 0 5 0.05
+.control
+run
+
+Plot V(in) V(out)
+.endc
+.end
+
