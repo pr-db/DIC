@@ -1,0 +1,122 @@
+*MDTL NAND Fanout
+
+.model q1 npn bf=50
+.model d1 d
+
+.subckt dtlckt a 1 0 out
+q11 c1 b1 e1 q1
+q12 out b2 0 q1
+Da b1 a d1
+Db b1 a d1
+D1 e1 b2 d1
+R1 1 c1 1.75k
+R2 c1 b1 2k
+Rc 1 out 4k
+Rb b2 0 5k
+.ends dtlckt
+
+*Supply
+Vcc 1 0 5
+Va a 0 5
+
+*Driver gate
+Xd a 1 0 out1 dtlckt
+*Load gates
+XL1 out1 1 0 out2 dtlckt
+XL2 out1 1 0 out3 dtlckt
+XL3 out1 1 0 out4 dtlckt
+XL4 out1 1 0 out5 dtlckt
+XL5 out1 1 0 out6 dtlckt
+XL6 out1 1 0 out7 dtlckt
+XL7 out1 1 0 out8 dtlckt
+XL8 out1 1 0 out9 dtlckt
+XL9 out1 1 0 out10 dtlckt
+XL10 out1 1 0 out11 dtlckt
+XL11 out1 1 0 out12 dtlckt
+XL12 out1 1 0 out13 dtlckt
+XL13 out1 1 0 out14 dtlckt
+XL14 out1 1 0 out15 dtlckt
+XL15 out1 1 0 out16 dtlckt
+XL16 out1 1 0 out17 dtlckt
+XL17 out1 1 0 out18 dtlckt
+XL18 out1 1 0 out19 dtlckt
+XL19 out1 1 0 out20 dtlckt
+XL20 out1 1 0 out21 dtlckt
+XL21 out1 1 0 out22 dtlckt
+XL22 out1 1 0 out23 dtlckt
+XL23 out1 1 0 out24 dtlckt
+XL24 out1 1 0 out25 dtlckt
+XL25 out1 1 0 out26 dtlckt
+XL26 out1 1 0 out27 dtlckt
+XL27 out1 1 0 out28 dtlckt
+XL28 out1 1 0 out29 dtlckt
+XL29 out1 1 0 out30 dtlckt
+XL30 out1 1 0 out31 dtlckt
+XL31 out1 1 0 out32 dtlckt
+XL32 out1 1 0 out33 dtlckt
+XL33 out1 1 0 out34 dtlckt
+XL34 out1 1 0 out35 dtlckt
+XL35 out1 1 0 out36 dtlckt
+XL36 out1 1 0 out37 dtlckt
+XL37 out1 1 0 out38 dtlckt
+XL38 out1 1 0 out39 dtlckt
+XL39 out1 1 0 out40 dtlckt
+XL40 out1 1 0 out41 dtlckt
+XL41 out1 1 0 out42 dtlckt
+XL42 out1 1 0 out43 dtlckt
+XL43 out1 1 0 out44 dtlckt
+XL44 out1 1 0 out45 dtlckt
+XL45 out1 1 0 out46 dtlckt
+XL46 out1 1 0 out47 dtlckt
+XL47 out1 1 0 out48 dtlckt
+XL48 out1 1 0 out49 dtlckt
+XL49 out1 1 0 out50 dtlckt
+XL50 out1 1 0 out51 dtlckt
+XL51 out1 1 0 out52 dtlckt
+XL52 out1 1 0 out53 dtlckt
+XL53 out1 1 0 out54 dtlckt
+XL54 out1 1 0 out55 dtlckt
+XL55 out1 1 0 out56 dtlckt
+XL56 out1 1 0 out57 dtlckt
+XL57 out1 1 0 out58 dtlckt
+XL58 out1 1 0 out59 dtlckt
+XL59 out1 1 0 out60 dtlckt
+XL60 out1 1 0 out61 dtlckt
+XL61 out1 1 0 out62 dtlckt
+XL62 out1 1 0 out63 dtlckt
+XL63 out1 1 0 out64 dtlckt
+XL64 out1 1 0 out65 dtlckt
+XL65 out1 1 0 out66 dtlckt
+XL66 out1 1 0 out67 dtlckt
+XL67 out1 1 0 out68 dtlckt
+XL68 out1 1 0 out69 dtlckt
+XL69 out1 1 0 out70 dtlckt
+XL70 out1 1 0 out71 dtlckt
+XL71 out1 1 0 out72 dtlckt
+XL72 out1 1 0 out73 dtlckt
+XL73 out1 1 0 out74 dtlckt
+XL74 out1 1 0 out75 dtlckt
+XL75 out1 1 0 out76 dtlckt
+XL76 out1 1 0 out77 dtlckt
+XL77 out1 1 0 out78 dtlckt
+XL78 out1 1 0 out79 dtlckt
+XL79 out1 1 0 out80 dtlckt
+XL80 out1 1 0 out81 dtlckt
+XL81 out1 1 0 out82 dtlckt
+XL82 out1 1 0 out83 dtlckt
+XL83 out1 1 0 out84 dtlckt
+XL84 out1 1 0 out85 dtlckt
+XL85 out1 1 0 out86 dtlckt
+XL86 out1 1 0 out87 dtlckt
+XL87 out1 1 0 out88 dtlckt
+XL88 out1 1 0 out89 dtlckt
+XL89 out1 1 0 out90 dtlckt
+*XL90 out1 1 0 out91 dtlckt
+
+.dc Va 0 5 0.05
+.control
+run
+plot v(out1) v(a)
+.endc
+.end
+

@@ -1,0 +1,22 @@
+*MDTL NAND Transient Response
+.Model mybjt NPN bf=20
+.Model D1 D
+Q1 2 3 5 mybjt
+Q2 out 4 0 mybjt
+R1 2 1 1.75k
+R2 3 2 2k
+R3 4 0 5k
+Rc 1 out 2k
+Da 3 a D1
+Db 3 b D1
+Dc 5 4 D1
+Vcc 1 0 5
+Va a 0 pulse(0 5 0ps 10ps 10ps 200ps 550ps)
+Vb b 0 pulse(0 5 5ps 10ps 10ps 100ps 550ps)
+
+.tran 20ps 1500ps
+.control
+run
+plot V(a) V(b) V(out)
+.endc
+.end

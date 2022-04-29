@@ -1,0 +1,28 @@
+*MDTL transfer char
+.model bjt npn bf=20
+.model diode d
+
+.subckt modifiedDTL in1 in2 vccNode gnd out
+    rc vccNode out 2k
+    q2 out q2base gnd bjt
+    r3 q2base gnd 5k
+    dd q1emmiter q2base diode
+    q1 q1collector q1base q1emmiter bjt
+    r2 q1collector q1base 2k
+    r1 q1collector vccNode 1.75k
+    da q1base in1 diode
+    db q1base in2 diode
+.ends dtlckt
+
+*supply
+vcc vccNode 0 5
+Va in 0 5
+
+*driver gate
+Xd in in vccNode 0 out1 modifiedDTL
+.dc Va 0 5 0.05
+.control
+run
+plot v(in) v(out1)
+.endc
+.end
