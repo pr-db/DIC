@@ -1,0 +1,15 @@
+*TTL Inverter static(DC) Analysis
+.model switch NPN (Bf=20)
+Q1 2 1 4 switch
+Q2 3 2 0 switch
+R2 5 3 1.6k
+R1 5 1 4k
+Vcc 5 0 5
+Vin 4 0 dc 5
+
+.dc Vin 0 5 0.05
+.control
+run
+plot v(3) v(4)
+.endc
+.end

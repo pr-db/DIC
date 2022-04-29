@@ -1,0 +1,18 @@
+*RTL inverter Transient Analysis
+
+.model switch NPN Bf=20
+
+Q 2 1 0 switch
+Rc 2 3 1k
+Rb 4 1 10k
+Vcc 3 0 5
+Vin 4 0 pulse (0 5 1ns 1ns 1ns 20us 40us)
+c 2 0 1p
+
+.tran 1ns 80us
+
+.control
+run
+plot v(4) V(2)
+.endc
+.end

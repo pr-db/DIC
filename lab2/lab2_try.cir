@@ -1,0 +1,35 @@
+*RTL inverter sing NPN transient analysis
+
+.Model mod1 NPN Bf=20
+
+Rb 1 2 10k
+Q 3 2 0 mod1
+Rc 4 3 1k
+VCC 4 0 5
+Vin 1 0 5
+
+.subckt sub o in c 0
+Rb1 in b 10k
+Rc1 c o 1k
+Q1 o b 0 mod1
+.ends sub
+
+X1 out1 3 4 0 sub
+X2 out2 3 4 0 sub
+X3 out3 3 4 0 sub
+X4 out4 3 4 0 sub
+X5 out5 3 4 0 sub
+X6 out6 3 4 0 sub
+X7 out7 3 4 0 sub
+*X8 out8 3 4 0 sub
+*X9 out9 3 4 0 sub
+*X10 out10 3 4 0 sub
+*X11 out11 3 4 0 sub
+*X12 out12 3 4 0 sub
+.dc Vin 0 5 0.05
+
+.control 
+run
+plot V(3) V(out1)
+.endc
+.end
