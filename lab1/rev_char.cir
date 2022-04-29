@@ -1,0 +1,14 @@
+* Diode Rev characteristics
+
+.Model m1 D (N=2 IS = 1E-12 RS=10 CJ0=5P TT=10N BV=10)
+D1 1 2 m1
+R1 2 0 1k
+V1 1 0 dc 1
+
+.dc V1 -15 0 0.05
+.control
+run
+*plot v(1) - v(2)
+plot -I(V1)
+.endc
+.end
