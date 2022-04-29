@@ -1,0 +1,18 @@
+*TTL inverter transient analysis
+
+.model Q1 npn Bf=50
+Q11 2 1 0 Q1
+Q12 1 5 4 Q1
+R2 2 3 1.6K
+R1 5 3 4K
+Vcc 3 0 5
+Vin 4 0 pulse (0 5 1ns 1ns 1ns 20us 40us)
+c 2 0 1p
+
+.tran 1ns 80us
+
+.control
+run
+plot v(2) v(4)
+.endc
+.end
